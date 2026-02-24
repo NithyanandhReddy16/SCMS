@@ -28,7 +28,7 @@ public class ComplaintController {
         return service.getMy(auth.getName(),PageRequest.of(page,size));
     }
 
-    @GetMapping
+    @GetMapping("/all")
     @PreAuthorize("hasRole('ADMIN')")
     public Page<Complaint> all(@RequestParam(required=false) Status status,
                                @RequestParam(required=false) String category,
